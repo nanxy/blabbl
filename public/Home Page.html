@@ -12,6 +12,7 @@
 <body>
 
 <style>
+
 .newEntryButton {
     background-color: #e7e7e7; /* Grey */
     border: none;
@@ -19,18 +20,24 @@
     padding: 50px 40px;
     text-align: center;
     text-decoration: none;
-    position: center;
     display: inline-block;
     font-size: 20px;
-    left: 250px;
-    top: 150px;
     border-radius: 12px;
-    justify-content: center;
-     align-items: center;
+
+  }
+  .newEntryButton:link {
+    background-color: grey;
+    text-decoration: none;
+    color: black;
+
   }
   .newEntryButton:hover {
     background-color: grey;
+    text-decoration: none;
+    color: black;
+
   }
+
 
 
 .galleryButton {
@@ -41,25 +48,49 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    height: 75px;
+    width: 65px;    
     font-size: 12px;
     border-radius: 12px;
+    position: relative;
+    bottom: -100px;
+
   }
 
+  .galleryButton:link {
+    background-color: grey;
+    text-decoration: none;
+    color: black;
+
+  }
   .galleryButton:hover {
     background-color: grey;
+    text-decoration: none;
+    color: black;
   }
+
+
 </style>
 
-<div class="container">
-  <a href="file:///Users/Alyssa/Documents/Current%20Classes/cogs120/ixd-skeleton/public/Entry%20Page.html" class="newEntryButton" role="button">NEW ENTRY<br/><br/>+
-  </a>
+ <div class="text-center">
+  <div class="container">
+    <a href="file:///Users/Alyssa/Documents/Current%20Classes/cogs120/public/Entry%20Page.html" class="newEntryButton" role="button">NEW ENTRY<br/><br/>+
+    </a>
+ </div>
 
-  <div class="btn-group">
-  <button type="button" class="galleryButton">Gallery</button>
-  <button type="button" class="galleryButton">Home</button>
-  <button type="button" class="galleryButton">Calendar</button>
-</div>
+
+  <div class="container">
+
+    <a href="file:///Users/Alyssa/Documents/Current%20Classes/cogs120/public/GalleryPage.html" class="galleryButton" role="button"><br/><br/>Gallery
+    </a>
+
+    <a href="file:///Users/Alyssa/Documents/Current%20Classes/cogs120/public/Home%20Page.html" class="galleryButton" role="button"><br/><br/>Calendar
+    </a>
   
+    <a href="file:///Users/Alyssa/Documents/Current%20Classes/cogs120/public/CalendarPage.html" class="galleryButton" role="button"><br/><br/>Tags
+    </a>
+  </div>
+ 
 
 
 
