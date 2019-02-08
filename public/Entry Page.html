@@ -13,32 +13,44 @@
 </head>
 <body>
 <div class="screenContainer">
+  
   <div class="row">
-    <div class="col-lg-2 col-sm-2">&nbsp;
+    
+	 <div class="col-lg-2 col-sm-2">&nbsp;
 		<a href="file:///Users/Alyssa/Documents/Current%20Classes/cogs120/public/Home%20Page.html"> <img src="leftarrow.jpg" alt="Responsive image" width="31" height="30" class="img-fluid">
 		</a>
-	  </div>
-	<div class="col-lg-2 col-sm-8">&nbsp;</div>
-	<div class="col-lg-2 offset-sm-0 col-sm-4">&nbsp;Timer</div>
-	<div class="col-lg-2 col-sm-5 offset-sm-1">&nbsp; Doodle</div>
-    <div class="col-lg-2 col-sm-7 offset-sm-2">&nbsp;
+	  
+    </div>
+	
+	<div class="col-lg-2 col-sm-8 col-md-10">&nbsp;</div>
+	
+	<div class="col-lg-2 offset-sm-0 col-sm-4 offset-md-1">&nbsp;Timer</div>
+	
+	<div class="col-lg-2 col-sm-5 offset-sm-1 col-md-4 offset-md-3">&nbsp;
+		Canvas
+	  <canvas id="myCanvas" height=100 width=100> </canvas> 
+	</div>
+    
+	<div class="col-lg-2 col-sm-7 offset-sm-2 offset-md-2 col-md-8">&nbsp;
       
-      <div class="form-group">
-  		<label for="exampleFormControlTextarea2">Write here, right now...</label>
-  		<textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="5"></textarea>
-	  </div>
-	  </div>
-    <div class="col-lg-2 col-sm-5">&nbsp; Tags</div>
-    <div class="col-lg-2 col-sm-2 offset-sm-2">&nbsp; 
-	    <div class="popup" onclick="myFunction()">Save
-    	<span class="popuptext" id="myPopup">Draft saved!</span>
-    	</div>  
+    	<div class="form-group">  			
+			<textarea class="form-control rounded-0" 	id="exampleFormControlTextarea2" placeholder="Write here, right now" rows="5"></textarea>
+		</div>
 	</div>
-    <div class="col-lg-2 col-sm-2 offset-sm-4">&nbsp; 
-	  	<div class="popup" onclick="myFunction()">Home
-    	<span class="popuptext" id="myPopup">Are you sure you don't want to save? </span>
-    	</div>
+    
+	<div class="col-lg-2 col-sm-5 col-md-4 offset-md-1">&nbsp; Tags</div>
+    
+	<div class="col-lg-2 offset-md-3 col-md-4 col-sm-5 offset-sm-0">&nbsp;
+		
+		<div class="galleryButton" role="button">Save</div>
+	
 	</div>
+    
+	<div class="col-lg-2 col-sm-2 offset-sm-4 offset-md-0 col-md-12">&nbsp;
+		
+	<a href="file:///Users/Alyssa/Documents/Current%20Classes/cogs120/public/Home%20Page.html"> <img src="homebutton.png" alt="Responsive image" width="28" height="28" class="img-fluid">
+	
+    </div>
   </div>
 </div>
 	
@@ -53,6 +65,33 @@ function myFunction() {
 </script>
 </body>
 <style>
+	.myCanvas{
+		width =20%; 
+		height=20%;
+	}
+	
+  .galleryButton {
+	background-color: #e7e7e7; /* Grey */
+	border: none;
+    color: black;
+	display: inline-block;
+	text-decoration: none;
+	width: 25%;   
+	font-size: 2vw;
+    border-radius: 20%;
+  }
+
+  .galleryButton:link {
+    background-color: grey;
+    text-decoration: none;
+    color: black;
+
+  }
+  .galleryButton:hover {
+    background-color: grey;
+    text-decoration: none;
+    color: black;
+  }
   .screenContainer {
 	margin-left:25%;
     height: 100%;
@@ -60,58 +99,58 @@ function myFunction() {
 	align-content: center; 
   }
 	
-/* Popup container */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
+	/* Popup container */
+	.popup {
+	  position: relative;
+	  display: inline-block;
+	  cursor: pointer;
+	}
 
-/* The actual popup (appears on top) */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-}
+	/* The actual popup (appears on top) */
+	.popup .popuptext {
+	  visibility: hidden;
+	  width: 160px;
+	  background-color: #555;
+	  color: #fff;
+	  text-align: center;
+	  border-radius: 6px;
+	  padding: 8px 0;
+	  position: absolute;
+	  z-index: 1;
+	  bottom: 125%;
+	  left: 50%;
+	  margin-left: -80px;
+	}
 
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
+	/* Popup arrow */
+	.popup .popuptext::after {
+	  content: "";
+	  position: absolute;
+	  top: 100%;
+	  left: 50%;
+	  margin-left: -5px;
+	  border-width: 5px;
+	  border-style: solid;
+	  border-color: #555 transparent transparent transparent;
+	}
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
-}
+	/* Toggle this class when clicking on the popup container (hide and show the popup) */
+	.popup .show {
+	  visibility: visible;
+	  -webkit-animation: fadeIn 1s;
+	  animation: fadeIn 1s
+	}
 
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;} 
-  to {opacity: 1;}
-}
+	/* Add animation (fade in the popup) */
+	@-webkit-keyframes fadeIn {
+	  from {opacity: 0;} 
+	  to {opacity: 1;}
+	}
 
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
+	@keyframes fadeIn {
+	  from {opacity: 0;}
+	  to {opacity:1 ;}
+	}
 </style>
 	
 </html>
