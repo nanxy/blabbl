@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Bootstrap Example</title>
+<title>Blabblentry</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
@@ -10,36 +10,46 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="screenContainer">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-1">
+      <a href="Home Page.html"> <img src="leftarrow.jpg" alt="Responsive image" width="31" height="30" class="img-fluid"> </a>
+     </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <form>
+        <input type="text" id="mns" name="mns" value="0" size="3" maxlength="3" />
+        <input type="text" id="scs" name="scs" value="0" size="2" maxlength="2" />
+        <br/>
+        <input type="button" id="btnct" value="start" onclick="countdownTimer()"/>
+      </form>
+    <span id="showmns">00</span>:<span id="showscs">00</span>
+    </div>
+  <div class="col-xs-3">
+    <img class="img-responsive" src="timerPlant.png" alt="plant" width="100" height="auto"  >
+  </div>
+  <div class="col-xs-6">
+  </div>
+  </div>
+
 <div class="row">
-  <div class="col-lg-2 col-sm-2">&nbsp; <a href="Home Page.html"> <img src="leftarrow.jpg" alt="Responsive image" width="31" height="30" class="img-fluid"> </a> </div>
-  <div class="col-lg-2 col-sm-8 col-md-10">&nbsp;</div>
-  <div class="col-lg-4 offset-sm-0 col-sm-4 offset-md-1">&nbsp;
-    <form>
-      <input type="text" id="mns" name="mns" value="0" size="3" maxlength="3" />
-      &nbsp; &nbsp;
-      <input type="text" id="scs" name="scs" value="0" size="2" maxlength="2" />
-      <br/>
-      <input type="button" id="btnct" value="start" onclick="countdownTimer()"/>
-    </form>
-    &nbsp; <span id="showmns">00</span>:<span id="showscs">00</span> </div>
-  <div class="col-lg-2 col-sm-5 offset-sm-1 col-md-4 offset-md-3">&nbsp; 
-	<canvas id="myCanvas" width="200" height="100"
-	style="border:1px solid #c3c3c3;">
-	Your browser does not support the canvas element.
-	</canvas></div>
-  <div class="col-lg-2 col-sm-7 offset-sm-2 offset-md-2 col-md-8">&nbsp;
+  <div class="col-xs-6">
     <div class="form-group">
       <textarea class="form-control rounded-0" 	id="exampleFormControlTextarea2" placeholder="Write here, right now..." rows="5"></textarea>
     </div>
   </div>
-  <div class="col-lg-2 col-md-4 offset-md-1 col-sm-5">&nbsp;
-    <div class="galleryButton" role="button">Tags +</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-10">
+  <button type="button mx-auto" class="btn btn-default">Tags + </button>
+  <button type="button mx-auto" class="btn btn-default" onclick="download()">Save</button>
+</div>
+  <div class="col-2">
+    <a href="Home Page.html"> <img src="homebutton.png" alt="Responsive image" width="20" height="20" class="img-fluid">
   </div>
-  <div class="col-lg-2 offset-md-3 col-md-4 col-sm-5 offset-sm-1">&nbsp;
-    <div class="galleryButton" role="button" onclick="download()">Save</div>
-  </div>
-  <div class="col-lg-2 offset-md-0 col-md-12 offset-sm-4 col-sm-3">&nbsp; <a href="Home Page.html"> <img src="homebutton.png" alt="Responsive image" width="20" height="20" class="img-fluid"> </div>
+</div>
 </div>
 <script type="text/javascript"><!--
     /* Function to display a Countdown timer with starting time from a form */
@@ -47,7 +57,7 @@
 var ctmnts = 0;
 var ctsecs = 0;
 var startchr = 0;       // used to control when to read data from form
-	
+
 function countdownTimer() {
 
   // https://coursesweb.net/javascript/
@@ -99,13 +109,7 @@ function countdownTimer() {
 
 }
 //-->
-	
-</script>
-<script>
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-ctx.fillStyle = "#FF0000";
-ctx.fillRect(0,0,150,75);
+
 </script>
 <script>
 
@@ -114,14 +118,14 @@ function hideButtons()
   var startButton = document.getElementById("btnct");
   var min = document.getElementById("mns");
   var sec = document.getElementById("scs");
-	
+
   if( startButton.style.display === "none"){
 	  startButton.style.display = "block";
 	  min.style.display = "block";
 	  sec.style.disaply = "block";
-  }	
-}	
-	
+  }
+}
+
 function download(){
     var text = document.getElementById("exampleFormControlTextarea2").value;
     text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
@@ -141,7 +145,7 @@ function myFunction() {
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
 }
-	
+
 </script>
 </body>
 <style>
@@ -170,8 +174,7 @@ function myFunction() {
     color: black;
 }
 .screenContainer {
-    margin-left: auto;
-	margin-right: auto;
+    margin-left: 25%;
     height: 100%;
     text-align: center;
     align-content: center;
