@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 <div class="screenContainer">
@@ -22,17 +24,19 @@
     <div class="col-lg-2 col-sm-7 offset-sm-2">&nbsp;
       
       <div class="form-group">
-  <label for="exampleFormControlTextarea2">Write here, right now...</label>
-  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="5"></textarea>
-</div>
+  		<label for="exampleFormControlTextarea2">Write here, right now...</label>
+  		<textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="5"></textarea>
+	  </div>
 	  </div>
     <div class="col-lg-2 col-sm-5">&nbsp; Tags</div>
     <div class="col-lg-2 col-sm-2 offset-sm-2">&nbsp; 
-	  
+	    <div class="popup" onclick="myFunction()">Save
+    	<span class="popuptext" id="myPopup">Draft saved!</span>
+    	</div>  
 	</div>
     <div class="col-lg-2 col-sm-2 offset-sm-4">&nbsp; 
 	  	<div class="popup" onclick="myFunction()">Home
-    	<span class="popuptext" id="myPopup">Are you sure you want to save?</span>
+    	<span class="popuptext" id="myPopup">Are you sure you don't want to save? </span>
     	</div>
 	</div>
   </div>
