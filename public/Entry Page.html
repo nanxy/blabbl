@@ -10,20 +10,104 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<style>
-
-
-
-</style>
-
-<div class="form-group">
-  <label for="comment">Doodle</label>
-  <textarea class="form-control" rows="5" id="comment"></textarea>
+<div class="screenContainer">
+  <div class="row">
+    <div class="col-lg-2 col-sm-2">&nbsp;
+		<a href="file:///Users/Alyssa/Documents/Current%20Classes/cogs120/public/Home%20Page.html"> <img src="leftarrow.jpg" alt="Responsive image" width="31" height="30" class="img-fluid">
+		</a>
+	  </div>
+	<div class="col-lg-2 col-sm-8">&nbsp;</div>
+	<div class="col-lg-2 offset-sm-0 col-sm-4">&nbsp;Timer</div>
+	<div class="col-lg-2 col-sm-5 offset-sm-1">&nbsp; Doodle</div>
+    <div class="col-lg-2 col-sm-7 offset-sm-2">&nbsp;
+      
+      <div class="form-group">
+  <label for="exampleFormControlTextarea2">Write here, right now...</label>
+  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="5"></textarea>
 </div>
- 
+	  </div>
+    <div class="col-lg-2 col-sm-5">&nbsp; Tags</div>
+    <div class="col-lg-2 col-sm-2 offset-sm-2">&nbsp; 
+	  
+	</div>
+    <div class="col-lg-2 col-sm-2 offset-sm-4">&nbsp; 
+	  	<div class="popup" onclick="myFunction()">Home
+    	<span class="popuptext" id="myPopup">Are you sure you want to save?</span>
+    	</div>
+	</div>
+  </div>
+</div>
+	
+<script>
 
-
-
+// When the user clicks on <div>, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+	
+</script>
 </body>
+<style>
+  .screenContainer {
+	margin-left:25%;
+    height: 100%;
+    text-align: center;
+	align-content: center; 
+  }
+	
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+	
 </html>
