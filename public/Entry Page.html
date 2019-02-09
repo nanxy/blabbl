@@ -1,132 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blabblentry</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+<title>Blabblentry</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-1">
-        <a href="Home Page.html"> <img src="leftarrow.jpg" alt="Responsive image" width="31" height="30" class="img-fluid"> </a>
-      </div>
+<div class="screenContainer">
+  <div class="row">
+    <div class="col-xs-1">
+      <a href="Home Page.html"> <img src="leftarrow.jpg" alt="Responsive image" width="31" height="30" class="img-fluid"> </a>
+     </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <form>
+        <input type="text" id="mns" name="mns" value="0" size="3" maxlength="3" />
+        <input type="text" id="scs" name="scs" value="0" size="2" maxlength="2" />
+        <br/>
+        <input type="button" id="btnct" value="start" onclick="countdownTimer()"/>
+      </form>
+    <span id="showmns">00</span>:<span id="showscs">00</span>
     </div>
-    <div class="row">
-      <div class="col-xs-3">
-        <form>
-          <input type="text" id="mns" name="mns" value="0" size="3" maxlength="3" />
-          <input type="text" id="scs" name="scs" value="0" size="2" maxlength="2" />
-          <br/>
-          <input type="button" id="btnct" value="start" onclick="countdownTimer()"/>
-        </form>
-        <span id="showmns">00</span>:<span id="showscs">00</span>
-      </div>
-      <div class="col-xs-3">
-        <img class="img-responsive" src="timerPlant.png" alt="plant" width="100" height="auto"  >
-      </div>
-      <div class="col-xs-6">
-      </div>
-    </div>
+  <div class="col-xs-3">
+    <img class="img-responsive" src="timerPlant.png" alt="plant" width="100" height="auto"  >
+  </div>
+  <div class="col-xs-6">
+  </div>
+  </div>
 
-    <div class="row">
-      <div class="col-xs-6">
-        <div class="form-group">
-          <textarea class="form-control rounded-0" 	id="exampleFormControlTextarea2" placeholder="Write here, right now..." rows="5"></textarea>
-        </div>
-      </div>
+<div class="row">
+  <div class="col-xs-6">
+    <div class="form-group">
+      <textarea class="form-control rounded-0" 	id="exampleFormControlTextarea2" placeholder="Write here, right now..." rows="5"></textarea>
     </div>
+  </div>
+</div>
 
-    <div class="row">
-      <div class="col-xs-10">
-        <button type="button mx-auto" class="btn btn-default">Tags + </button>
-        <button type="button mx-auto" class="btn btn-default" onclick="download()">Save</button>
-      </div>
-      <div class="col-2">
-        <a href="Home Page.html"> <img src="homebutton.png" alt="Responsive image" width="20" height="20" class="img-fluid">
-        </div>
-      </div>
-    </div>
-    <script type="text/javascript"><!--
+<div class="row">
+  <div class="col-xs-10">
+  <button type="button mx-auto" class="btn btn-default">Tags + </button>
+  <button type="button mx-auto" class="btn btn-default" onclick="download()">Save</button>
+</div>
+  <div class="col-2">
+    <a href="Home Page.html"> <img src="homebutton.png" alt="Responsive image" width="20" height="20" class="img-fluid"></a>
+  </div>
+</div>
+</div>
+<script type="text/javascript"><!--
     /* Function to display a Countdown timer with starting time from a form */
-    // sets variables for minutes and seconds
-    var ctmnts = 0;
-    var ctsecs = 0;
-    var startchr = 0;       // used to control when to read data from form
+// sets variables for minutes and seconds
+var ctmnts = 0;
+var ctsecs = 0;
+var startchr = 0;       // used to control when to read data from form
 
-    function countdownTimer() {
+function countdownTimer() {
 
-      // https://coursesweb.net/javascript/
-      // if $startchr is 0, and form fields exists, gets data for minutes and seconds, and sets $startchr to 1
-      if(startchr == 0 && document.getElementById('mns') && document.getElementById('scs')) {
-        // makes sure the script uses integer numbers
-        ctmnts = parseInt(document.getElementById('mns').value) + 0;
-        ctsecs = parseInt(document.getElementById('scs').value) * 1;
+  // https://coursesweb.net/javascript/
+  // if $startchr is 0, and form fields exists, gets data for minutes and seconds, and sets $startchr to 1
+  if(startchr == 0 && document.getElementById('mns') && document.getElementById('scs')) {
+    // makes sure the script uses integer numbers
+    ctmnts = parseInt(document.getElementById('mns').value) + 0;
+    ctsecs = parseInt(document.getElementById('scs').value) * 1;
 
-        // if data not a number, sets the value to 0
-        if(isNaN(ctmnts)) ctmnts = 0;
-        if(isNaN(ctsecs)) ctsecs = 0;
+    // if data not a number, sets the value to 0
+    if(isNaN(ctmnts)) ctmnts = 0;
+    if(isNaN(ctsecs)) ctsecs = 0;
 
-        // rewrite data in form fields to be sure that the fields for minutes and seconds contain integer number
-        document.getElementById('mns').value = ctmnts;
-        document.getElementById('scs').value = ctsecs;
-        startchr = 1;
-        document.getElementById('btnct').setAttribute('disabled', 'disabled');     // disable the button
-      }
-
-      // if minutes and seconds are 0, sets $startchr to 0, and return false
-      if(ctmnts==0 && ctsecs==0) {
-        startchr = 0;
-        document.getElementById('btnct').removeAttribute('disabled');     // remove "disabled" to enable the button
-
-        /* HERE YOU CAN ADD TO EXECUTE A JavaScript FUNCTION WHEN COUNTDOWN TIMER REACH TO 0 */
-
-        return false;
-      }
-      else {
-        // decrease seconds, and decrease minutes if seconds reach to 0
-        ctsecs--;
-        if(ctsecs < 0) {
-          if(ctmnts > 0) {
-            ctsecs = 59;
-            ctmnts--;
-          }
-          else {
-            ctsecs = 0;
-            ctmnts = 0;
-          }
-        }
-      }
-
-      // display the time in page, and auto-calls this function after 1 seccond
-      document.getElementById('showmns').innerHTML = ctmnts;
-      document.getElementById('showscs').innerHTML = ctsecs;
-      setTimeout('countdownTimer()', 1000);
-
-    }
-    //-->
-
-  </script>
-  <script>
-
-  function hideButtons()
-  {
-    var startButton = document.getElementById("btnct");
-    var min = document.getElementById("mns");
-    var sec = document.getElementById("scs");
-
-    if( startButton.style.display === "none"){
-      startButton.style.display = "block";
-      min.style.display = "block";
-      sec.style.disaply = "block";
-    }
+    // rewrite data in form fields to be sure that the fields for minutes and seconds contain integer number
+    document.getElementById('mns').value = ctmnts;
+    document.getElementById('scs').value = ctsecs;
+    startchr = 1;
+    document.getElementById('btnct').setAttribute('disabled', 'disabled');     // disable the button
   }
 
-  function download(){
     var text = document.getElementById("exampleFormControlTextarea2").value;
     text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
     var blob = new Blob([text], { type: "text/plain"});
@@ -145,6 +97,13 @@
     var popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
   }
+
+
+// When the user clicks on <div>, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
 
 </script>
 </body>
