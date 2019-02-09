@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+<!--plant styling-->
+<style>
+.wrapper {
+	position:absolute;
+	bottom:0;
+	width:100%;
+	align-content: center;
+}
+
+.box {
+	position:relative;
+
+	display:block;
+
+	width:100px;
+	height:100px;
+	background:none;
+}
+
+
+.pot {
+	position:absolute;
+	width:20%;
+	height:20%;
+	bottom:0;
+	left:40%;
+	background:#FCAA67;
+	-webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+	clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+	box-shadow: inset 0 16px 20px rgba(0,0,0,0.3);
+}
+
+.pot-top {
+	position:absolute;
+	width:22%;
+	height:5%;
+	bottom:17%;
+	left:39%;
+	background:#FCAA67;
+	border-radius:3px;
+}
+
+.stem {
+	position:absolute;
+	width:2%;
+	height:50%;
+	left:49%;
+	bottom:20%;
+	background:#70B77E;
+}
+
+.leaf {
+	position:absolute;
+	width:700%;
+	height:10%;
+	border-radius:50%;
+	background:#70B77E;
+}
+
+.leaf .line {
+	position:absolute;
+	width:80%;
+	height:1%;
+	background:rgba(0,0,0,0.1);
+	top:48%;
+}
+
+.leaf01 {
+	top:70%;
+	left:50%;
+	transform:rotate(-25deg);
+}
+
+.leaf02 {
+	top:50%;
+	right:50%;
+	transform:rotate(205deg);
+}
+
+.leaf03 {
+	top:30%;
+	left:50%;
+	transform:rotate(-25deg);
+}
+
+.leaf04 {
+	top:20%;
+	right:50%;
+	transform:rotate(205deg);
+}
+
+.leaf05 {
+	top:-17%;
+	left:-120%;
+	transform:rotate(-60deg);
+}
+
+.leaf06 {
+	top:-9%;
+	right:22%;
+	transform:rotate(195deg);
+}
+
+/* --- ANIMATION --- */
+
+.stem, .leaf {
+	animation-duration: 1.2s!important;
+	animation-fill-mode:forwards;
+}
+
+.stem.rain {
+	animation: grow 1s linear 1;
+}
+
+@keyframes grow {
+	0% {
+		bottom:-40%;
+		width:1%;
+	}
+
+	100% {
+		bottom:20%;
+		width:2%;
+	}
+}
+
+.stem.rain .leaf {
+	animation: leafGrow 1s linear 1;
+	animation-fill-mode:forwards;
+}
+
+@keyframes leafGrow {
+	0% {
+		width:0%;
+		height:0%;
+	}
+
+	100% {
+		width:700%;
+		height:10%;
+	}
+}
+
+.stem.rain .leaf05 {
+	animation: topLeafRight 1s linear 1;
+}
+
+@keyframes topLeafRight {
+	0% {
+		top:5%;
+		width:0%;
+		height:0%;
+		left:10%;
+	}
+
+	100% {
+		width:700%;
+		height:10%;
+		top:-17%;
+		left:-120%;
+	}
+}
+
+.stem.rain .leaf06 {
+	animation: topLeafLeft 1s linear 1;
+}
+
+@keyframes topLeafLeft {
+	0% {
+		top:0%;
+		width:0%;
+		height:0%;
+	}
+
+	100% {
+		width:700%;
+		height:10%;
+		top:-9%;
+	}
+}
+
+.drop {
+
+	width: 20px;
+	height: 20px;
+  border: none;
+	-webkit-border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+	border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+	background:#17BEBB;
+	-webkit-transform: rotateZ(-45deg)   ;
+	transform: rotateZ(-45deg)   ;
+	-webkit-transform-origin: 50% 50% 0;
+	transform-origin: 50% 50% 0;
+	animation:rain 2s linear 1;
+	animation-fill-mode:forwards;
+	cursor:pointer;
+
+}
+
+.plant{
+  height: 10%;
+  width: 10%;
+
+}
+button[data-setter] {
+  outline: none;
+  background: transparent;
+  border: none;
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 18px;
+  width: 25px;
+  height: 30px;
+  color: #000000;
+  cursor: pointer;
+}
+
+button[data-setter]:hover { opacity: 0.5; }
+
+.container {
+  position: relative;
+  top: 30px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.setters {
+  position: absolute;
+  left: 85px;
+  top: 75px;
+}
+
+.minutes-set {
+  float: left;
+  margin-right: 28px;
+}
+
+.seconds-set { float: right; }
+
+.controlls {
+  position: absolute;
+  left: 75px;
+  top: 105px;
+  text-align: center;
+}
+
+.display-remain-time {
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-size: 65px;
+  color: #000000;
+}
+
+#pause {
+  outline: none;
+  background: transparent;
+  border: none;
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.play::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 22px solid #000000;
+}
+
+.pause::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 15px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 1px;
+  border: 5px solid #000000;
+  border-top: none;
+  border-bottom: none;
+}
+
+#pause:hover { opacity: 0.8; }
+
+.e-c-base {
+  fill: none;
+  stroke: #B6B6B6;
+  stroke-width: 4px
+}
+
+.e-c-progress {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 4px;
+  transition: stroke-dashoffset 0.7s;
+}
+
+.e-c-pointer {
+  fill: #FFF;
+  stroke: #000000;
+  stroke-width: 2px;
+}
+
+#e-pointer { transition: transform 0.7s; }
+h1 { margin-top:150px; text-align:center;}
+body { background-color:#f7f7f7;}
+</style>
+
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+
+<!-- light grey bg for large screens -->
+<body class="w3-light-grey">
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content,-->
+<div class="w3-content  w3-white w3" style="max-width:800px">
+
+<!-- Header -->
+<header class="w3-panel w3-center w3-opacity">
+  <div class="w3-padding-small">
+    <div class="w3-bar w3-border">
+      <a href="#" class="w3-bar-item w3-button ">back</a>
+<!--other nav buttons
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"></a>
+      <a href="#" class="w3-bar-item w3-button"></a>
+    -->
+      <a href="Home Page.html" class="w3-bar-item w3-button ">home</a>
+    </div>
+  </div>
+
+</header>
+
+<!-- Grid
+
+<div class="w3-card-4">
+  <div class="w3-row">
+    <div class="col-xs-1">
+      <a href="Home Page.html">  </a>
+     </div>
+  </div> -->
+
+
+
+    <div class="w3-card-4 w3-margin w3-white">
+        <div class="w3-cell-row">
+      <div class=" w3-cell-middle w3-margin">
+      <form class="w3-">
+        <input type="text" id="mns" name="mns" value="0" size="3" maxlength="3" />
+        <input type="text" id="scs" name="scs" value="0" size="2" maxlength="2" />
+        <br/>
+        <input type="button" class="drop w3-margin play" />
+      </form>
+
+</div>
+
+<!-- timer graphic-->
+<div class="w3-cell">
+<div class="box">
+  <div class="stem">
+    <div class="leaf leaf01">
+      <div class="line">
+      </div>
+    </div>
+    <div class="leaf leaf02">
+      <div class="line">
+      </div>
+    </div>
+    <div class="leaf leaf03">
+      <div class="line">
+      </div>
+    </div>
+    <div class="leaf leaf04">
+      <div class="line">
+      </div>
+    </div>
+    <div class="leaf leaf05">
+      <div class="line">
+      </div>
+    </div>
+    <div class="leaf leaf06">
+      <div class="line">
+      </div>
+    </div>
+  </div>
+  <div class="pot"></div>
+  <div class="pot-top"></div>
+</div>
+
+  </div>
+
+  </div>
+</div><!-- END TIMER ROW -->
+
+<!-- FORM -->
+<div class="w3-card-4 w3-margin w3-white">
+  <div class="col-xs-6">
+    <div class="form-group">
+      <textarea class="form-control rounded-0" 	id="exampleFormControlTextarea2" placeholder="Write here, right now..." rows="5"></textarea>
+    </div>
+  </div>
+</div><!-- END FORM -->
+
+<!-- TAG AND SAVE -->
+<div class="w3-row w3-card-4 w3-padding-small w3-white">
+  <div class="col-xs-10">
+ <span class="w3-tag">Happy</span>
+  <button type="button mx-auto" class="btn btn-default">Tags + </button>
+  <button type="button mx-auto" class="btn btn-default" onclick="download()">Save</button>
+</div>
+
+</div>
+</div><!-- END CONTENT-->
+
+
+<script>
+	$(".play").click(function() {
+		$(".stem").addClass("rain");
+
+		setTimeout(function () {
+			$('.stem').removeClass('rain');
+		}, 1200);
+	});
+</script>
+<!--END PLANT ANIMATION-->
+
+<script type="text/javascript"><!--
+    /* Function to display a Countdown timer with starting time from a form */
+// sets variables for minutes and seconds
+var ctmnts = 0;
+var ctsecs = 0;
+var startchr = 0;       // used to control when to read data from form
+
+function countdownTimer() {
+
+  // https://coursesweb.net/javascript/
+  // if $startchr is 0, and form fields exists, gets data for minutes and seconds, and sets $startchr to 1
+  if(startchr == 0 && document.getElementById('mns') && document.getElementById('scs')) {
+    // makes sure the script uses integer numbers
+    ctmnts = parseInt(document.getElementById('mns').value) + 0;
+    ctsecs = parseInt(document.getElementById('scs').value) * 1;
+
+    // if data not a number, sets the value to 0
+    if(isNaN(ctmnts)) ctmnts = 0;
+    if(isNaN(ctsecs)) ctsecs = 0;
+
+    // rewrite data in form fields to be sure that the fields for minutes and seconds contain integer number
+    document.getElementById('mns').value = ctmnts;
+    document.getElementById('scs').value = ctsecs;
+    startchr = 1;
+    document.getElementById('btnct').setAttribute('disabled', 'disabled');     // disable the button
+  }
+
+    var text = document.getElementById("exampleFormControlTextarea2").value;
+    text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
+    var blob = new Blob([text], { type: "text/plain"});
+    var anchor = document.createElement("a");
+    anchor.download = "entries.txt";
+    anchor.href = window.URL.createObjectURL(blob);
+    anchor.target ="_blank";
+    anchor.style.display = "none"; // just to be safe!
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+  }
+
+  // When the user clicks on <div>, open the popup
+  function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+
+
+// When the user clicks on <div>, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+
+</script>
+
+<!-- END BODY -->
+</body>
+
+<style>
+.myCanvas {
+  width =20%;
+  height=20%;
+}
+.galleryButton {
+  background-color: #e7e7e7; /* Grey */
+  border: none;
+  color: black;
+  display: inline-block;
+  text-decoration: none;
+  width: 25%;
+  font-size: 2vw;
+  border-radius: 20%;
+}
+.galleryButton:link {
+  background-color: grey;
+  text-decoration: none;
+  color: black;
+}
+.galleryButton:hover {
+  background-color: grey;
+  text-decoration: none;
+  color: black;
+}
+.screenContainer {
+  margin-left: 25%;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+}
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity:1;
+  }
+}
+</style>
+</html>
