@@ -1,8 +1,4 @@
-body, h1, h2, h3, h4, h5 {
-  font-family: "Raleway", sans-serif
-}
-
-  {
+.window {
   box-sizing: border-box
 }
 
@@ -108,6 +104,10 @@ input[type=submit]:hover {
   text-align: center;
   background-color: #666;
   border-radius: 0px 0px 4px 4px;
+}
+
+body, h1, h2, h3, h4, h5 {
+  font-family: "Raleway", sans-serif
 }
 
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
