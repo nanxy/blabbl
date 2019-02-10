@@ -1,100 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-</head>
-<body>
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="css/styling.css">
 
-<style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <title></title>
+    <style>
+    body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    </style>
+  </head>
 
-.newEntryButton {
-    background-color: #e7e7e7; /* Grey */
-    border: none;
-    color: black;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 12px;
-    font-size: 2vw;
-	width: 65%;
-height: 50%;
- }
-  .newEntryButton:link {
-    background-color: grey;
-    text-decoration: none;
-    color: black;
+  <!-- light grey bg for large screens -->
+  <body class="w3-light-grey">
+  <!-- w3-content defines a container for fixed size centered content,
+  and is wrapped around the whole page content,-->
+  <div class="w3-content w3-white  w3-padding-64" style="max-width:800px; height:500px; max-height:800px">
 
-  }
-  .newEntryButton:hover {
-    background-color: grey;
-    text-decoration: none;
-    color: black;
+<!-- Header -none for home page
+<header class="w3-panel w3-center w3-opacity">
+  <div class="w3-padding-small">
+    <div class="w3-bar w3-border">
+      <a href="#" class="w3-bar-item w3-button ">back</a>
+      <a href="Home Page.html" class="w3-bar-item w3-button ">home</a>
+-->
+<!--other nav buttons
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"></a>
+      <a href="#" class="w3-bar-item w3-button"></a>
 
-  }
+      </header>  -->
 
 
+    <div class="w3-card-4 w3-margin w3-white w3-padding-64">
+        <div class="w3-cell-row">
+      <div class=" w3-cell-middle w3-margin">
 
-.galleryButton {
-	background-color: #e7e7e7; /* Grey */
-	border: none;
-    color: black;
-	display: inline-block;
-	text-decoration: none;
-	width: 25%;   
-	font-size: 1.2vw;
-    border-radius: 20%;
-  }
+      <a href="Entry Page.html">  <button class="w3-btn w3-block w3-padding-16 "> <h1>New Entry </h1></button></a>
 
-  .galleryButton:link {
-    background-color: grey;
-    text-decoration: none;
-    color: black;
-
-  }
-  .galleryButton:hover {
-    background-color: grey;
-    text-decoration: none;
-    color: black;
-  }
-
-  .screenContainer {
-	margin-left:25%;
-    height: 40%;
-    width: 25%;
-    text-align: center;
-	align-content: center; 
-  }
-
-</style>
-
-<div class="screenContainer">
- <div class="col-md-12">&nbsp;</div>
- <div class="col-md-12">&nbsp;
-    <a href="Entry Page.html" class="newEntryButton" role="button">NEW ENTRY<br/>+
-    </a>
- </div>
-
-<div class="col-md-12">&nbsp;</div>
-
-<div class="col-md-12">&nbsp;
-	<a href="GalleryPage.html" class="galleryButton" role="button"><br/>
-	Gallery
-    </a>
-
-    <a href="CalendarPage.html" class="galleryButton" role="button"><br/>Calendar
-    </a>
-  
-    <a href="TagsPage.html" class="galleryButton" role="button"><br/>Tags
-    </a>
+    </div>
   </div>
-  
+</div>
+
+
+
+
+
+<div class=" w3-white w3-panel w3-center ">
+    <div class="w3-cell-row">
+  <div class=" w3-cell-middle w3-margin w3-padding-32">
+ <div class="w3-bar">
+   <button class="w3-button w3-black">	<a href="GalleryPage.html">	Gallery </a></button>
+   <button class="w3-button w3-teal">    <a href="CalendarPage.html">Calendar</a></button>
+   <button class="w3-button w3-red">    <a href="TagsPage.html">Tags</a></button>
+ </div>
+</div>
+</div>
+</div>
+
+
+
+      </div>
 </div>
 
 </body>
