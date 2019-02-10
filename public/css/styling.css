@@ -1,17 +1,7 @@
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+body,h1,h2,h3,h4,h5 {
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-
-
-
-
-window {
-
+  font-family: "Raleway", sans-serif
 }
 
 
@@ -137,7 +127,7 @@ input[type=submit]:hover {
     text-align: center;
   }
 }
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+
   .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
