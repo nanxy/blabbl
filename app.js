@@ -40,6 +40,8 @@ app.get('/newentry',index.newentry);
 app.get('/tagspage',index.tagspage);
 app.get('/tagentries',index.tagentries);
 app.get('/entrycontent',index.viewentry);
+app.get('/prompt1',index.prompt1);
+app.get('/prompt2',index.prompt2);
 
 
 http.createServer(app).listen(app.get('port'), function(){

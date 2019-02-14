@@ -33,3 +33,11 @@ exports.tagentries = function(req, res){
 exports.viewentry = function(req, res){
 	res.render('EntryContent');
 };
+
+exports.prompt1 = function(req, res){
+	res.render('Prompt1');
+};
+
+exports.prompt2 = function(req, res){
+	res.render('Prompt2');
+};
