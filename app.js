@@ -9,8 +9,6 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
-// Example route
-// var user = require('./routes/user');
 
 var app = express();
 
@@ -28,6 +26,7 @@ app.use(express.cookieParser('IxD secret key'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('./images')); 
 
 // development only
 if ('development' == app.get('env')) {
@@ -35,8 +34,10 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
-// Example route
-// app.get('/users', user.list);
+app.get('/pastentries', index.postentry);
+app.get('/profile', index.profile);
+app.get('/newentry',index.newentry);
+app.get('/tagspage',index.tagspage);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="css/styling.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+<title>New Entry</title>
+
+<!-- light grey bg for large screens -->
+
+<body class="w3-light-grey">
+
+  <!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content,-->
+  <div class="w3-content w3-white " style="max-width:800px; height:500px; max-height:800px">
+    <!-- Grid
+
+<div class="w3-card-4">
+  <div class="w3-row">
+    <div class="col-xs-1">
+      <a href="Home Page.html">  </a>
+     </div>
+  </div> -->
+
+    <!-- Header -->
+    <header class="w3-panel w3-center w3-opacity w3-padding-16">
+      <div class="w3-padding-small">
+        <div class="w3-bar w3-border">
+					
+          <button class="w3-bar-item w3-button" onclick="goBack()">back</button>
+          <!--other nav buttons
+        <a href="#" class="w3-bar-item w3-button w3-light-grey"></a>
+        <a href="#" class="w3-bar-item w3-button"></a>
+      -->
+          <a href="http://localhost:3000" class="w3-bar-item w3-button ">home</a>
+        </div>
+      </div>
+
+    </header>
+    <div class="w3-padding-large">
+      <div class="w3-card-4 w3-margin w3-white">
+        <div class="w3-cell-row">
+          <div class="timer w3-cell-middle w3-margin">
+						<img class="timergraphic" src="middle.png">
+						<div class="w3-bar"> <p>timer here</p></div>	
+					</div>
+
+         
+
+      <!-- FORM -->
+      <div class="w3-card-4 w3-margin w3-white w3-padding-small">
+
+        <div class="form-group">
+          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" placeholder="Write here, right now..." rows="5"></textarea>
+        </div>
+
+      </div><!-- END FORM -->
+
+      <!-- TAG AND SAVE -->
+      <div class="w3-row w3-card-4 w3-padding-small w3-white">
+        <div class="col-xs-10">
+          <span class="w3-tag">Happy</span>
+					<span class="w3-tag">Work</span>
+          <button type="button mx-auto" class="btn btn-default" onclick="download()">Save</button>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- END CONTENT-->
+
+  <!-- END BODY -->
+</body>
+		
+<script>
+		function goBack() {
+		window.history.back();
+}
+</script>
+
+
+</html>
