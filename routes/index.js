@@ -25,3 +25,11 @@ exports.newentry = function(req, res){
 exports.tagspage = function(req, res){
 	res.render('TagsPage');
 };
+
+exports.tagentries = function(req, res){
+	res.render('TagEntries');
+};
+
+exports.viewentry = function(req, res){
+	res.render('EntryContent');
+};

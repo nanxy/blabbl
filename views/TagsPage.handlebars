@@ -28,11 +28,7 @@
     <header class="w3-panel w3-center w3-opacity w3-padding-16">
       <div class="w3-padding-small">
         <div class="w3-bar w3-border">
-          <a href="#" class="w3-bar-item w3-button ">back</a>
-          <!--other nav buttons
-        <a href="#" class="w3-bar-item w3-button w3-light-grey"></a>
-        <a href="#" class="w3-bar-item w3-button"></a>
-      -->
+          <button class="w3-bar-item w3-button" onclick="goBack()">back</button>
           <a href="http://localhost:3000" class="w3-bar-item w3-button ">home</a>
         </div>
       </div>
@@ -40,15 +36,22 @@
     </header>
 
     <!-- CONTENT-->
-			<div class="w3-card-4 w3-margin-100 w3-white">
+			<div class="w3-card-4 w3-white">
 
 				<div class="w3-cell-row">
-					<div class=" w3-cell-middle">
-
-						<a href="http://localhost:3000/entrycontent"> <button class="w3-btn w3-block w3-padding-16 ">
-								<h1>tag</h1>
+              <div class="w3-cell-middle">
+						<a href="http://localhost:3000/tagentries"> <button class="w3-btn w3-block w3-padding-16 ">
+								<h1>happy</h1>
 							</button></a>
-
+					</div></div>
+                                                                                                      
+				</div>
+        
+        <div class="w3-cell-row">
+					<div class=" w3-cell-middle">
+						<a href="http://localhost:3000/tagentries"> <button class="w3-btn w3-block w3-padding-16 ">
+								<h1>sad</h1>
+							</button></a>
 					</div>
 				</div>
 			</div>
@@ -58,4 +61,9 @@
 
   </div><!-- END CONTAINER -->
 </body><!-- END BODY -->
+<script>
+		function goBack() {
+		window.history.back();
+}
+</script>
 </html>

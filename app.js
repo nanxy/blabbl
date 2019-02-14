@@ -38,6 +38,9 @@ app.get('/pastentries', index.postentry);
 app.get('/profile', index.profile);
 app.get('/newentry',index.newentry);
 app.get('/tagspage',index.tagspage);
+app.get('/tagentries',index.tagentries);
+app.get('/entrycontent',index.viewentry);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
