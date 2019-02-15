@@ -383,3 +383,10 @@ body { background-color:#f7f7f7;}
 .icn {
   width: 100px;
 }
+.flower {
+  height: 100vh;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
