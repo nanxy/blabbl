@@ -6,11 +6,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="css/styling.css">
+<link rel="stylesheet" href="../css/styling.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="../proj.js"></script>
+<script src="../timer.js"></script>
 
 <title>Entry Page</title>
 
@@ -48,11 +50,117 @@ and is wrapped around the whole page content,-->
       <div class="w3-card-4 w3-margin w3-white">
         <div class="w3-cell-row">
           <div class="timer w3-cell-middle w3-margin">
-						<img class="timergraphic" src="../images/middle.png">
-						<div class="w3-bar"> <p>timer here</p></div>	
+
+            <!--Timer-->
+            <div class="tool">
+            <button id="btn">pause</button>
+            <button id="btn2">play</button>
+            <button id="btn3">slow</button>
+            <button id="btn4">restart</button>
+            <button id="btn5">reverse</button>
+            </div>
+
+
+            <!--
+            <svg id="letter" width="20px" height="21px">
+            <path fill-rule="evenodd" d="M15.488,3.160 C16.464,3.874 17.350,4.995 18.146,6.523 L19.515,5.601 C19.126,4.968 18.661,4.358 18.119,3.770 C17.576,3.183 16.955,2.665 16.254,2.218 C15.553,1.770 14.781,1.411 13.935,1.140 C13.090,0.869 12.166,0.733 11.163,0.733 C10.114,0.733 9.126,0.857 8.200,1.106 C7.273,1.355 6.417,1.702 5.630,2.150 C4.844,2.597 4.137,3.131 3.508,3.750 C2.880,4.369 2.349,5.050 1.915,5.791 C1.481,6.532 1.147,7.323 0.912,8.163 C0.677,9.004 0.559,9.867 0.559,10.753 C0.559,11.639 0.681,12.496 0.925,13.323 C1.169,14.150 1.517,14.925 1.969,15.648 C2.421,16.371 2.971,17.031 3.617,17.628 C4.263,18.224 4.986,18.735 5.786,19.160 C6.586,19.585 7.459,19.915 8.403,20.150 C9.348,20.385 10.340,20.502 11.380,20.502 C12.365,20.502 13.248,20.464 14.030,20.387 C14.812,20.310 15.526,20.193 16.173,20.035 C16.819,19.877 17.422,19.684 17.983,19.458 C18.543,19.232 19.099,18.970 19.651,18.672 L19.651,10.360 L12.912,10.360 L12.912,11.485 L16.478,11.485 L16.478,18.116 C15.953,18.532 15.357,18.853 14.688,19.079 C14.019,19.305 13.269,19.418 12.437,19.418 C11.298,19.418 10.231,19.214 9.237,18.807 C8.243,18.401 7.380,17.822 6.647,17.072 C5.915,16.322 5.337,15.413 4.912,14.346 C4.487,13.280 4.275,12.082 4.275,10.753 C4.275,9.424 4.469,8.227 4.858,7.160 C5.246,6.094 5.791,5.185 6.491,4.435 C7.192,3.684 8.021,3.106 8.980,2.699 C9.938,2.292 10.986,2.089 12.125,2.089 C13.391,2.089 14.512,2.446 15.488,3.160 Z"/>
+            </svg>
+            -->
+
+            <!-- ################################### -->
+
+            <div class="icn">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="697 709 512 512">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #26424b;
+                    stroke: #95989a;
+                  }
+
+                  .cls-2 {
+                    clip-path: url(#clip-path);
+                  }
+
+                  .cls-3 {
+                    fill: #db605a;
+                  }
+
+                  .cls-4 {
+                    fill: #a93b3b;
+                  }
+
+                  .cls-5 {
+                    fill: #b34d49;
+                  }
+
+                  .cls-6 {
+                    fill: #8a3b38;
+                  }
+
+                  .cls-7 {
+                    fill: #78c1b0;
+                  }
+
+                  .cls-8 {
+                    fill: #fff;
+                  }
+
+                  .cls-9 {
+                    fill: #e9e8ea;
+                  }
+
+                  .cls-10 {
+                    fill: #e8b750;
+                  }
+
+                  .cls-11 {
+                    fill: #5e9085;
+                  }
+
+                  .cls-12 {
+                    stroke: none;
+                  }
+
+                  .cls-13 {
+                    fill: none;
+                  }
+                </style>
+                <clipPath id="clip-path">
+                  <circle id="ellipse-45" class="cls-1" cx="256" cy="256" r="256" transform="translate(0 -1)"/>
+                </clipPath>
+              </defs>
+              <g id="group-mask-10" class="cls-2" transform="translate(697 710)">
+                <g id="icnBg" data-name="ellipse-45" class="cls-1" transform="translate(0 -1)">
+                  <circle class="cls-12" cx="256" cy="256" r="256"/>
+                  <circle class="cls-13" cx="256" cy="256" r="255.5"/>
+                </g>
+                <rect id="rectangle-27" class="cls-3" width="325" height="240" transform="translate(104 350)"/>
+                <path id="path-75" class="cls-4" d="M37,184.92V162H362v22.446C326,201.713,266.415,213,199,213,132.2,213,73.093,201.92,37,184.92Z" transform="translate(67 210)"/>
+                <path id="path-47" class="cls-3" d="M-696.975-562.933l-.025.015V-644.77l.064.049C-694.221-680.928-606.194-710-498-710c109.9,0,199,30,199,67,0,.339-.007.674-.022,1.012L-299-642v82.125l-.331-.228C-305.323-524.912-391.979-497-498-497-606.845-497-695.279-526.422-696.975-562.933Z" transform="translate(764 898)"/>
+                <ellipse id="ellipse-49" class="cls-5" cx="162.5" cy="60" rx="162.5" ry="60" transform="translate(104 206)"/>
+                <path id="path-57" class="cls-6" d="M-682.879-625.5C-657.5-646.423-600.61-661-534.5-661s123,14.576,148.38,35.5C-411.5-604.577-468.39-590-534.5-590S-657.5-604.577-682.879-625.5Z" transform="translate(801 916)"/>
+                <rect id="rectangle-28" class="cls-7" width="30" height="273" transform="translate(254 53)"/>
+                <ellipse id="ellipse-52" class="cls-8" cx="97" cy="20" rx="97" ry="20" transform="translate(172 102)"/>
+                <ellipse id="ellipse-52-2" data-name="ellipse-52" class="cls-8" cx="97" cy="20" rx="97" ry="20" transform="translate(289 25) rotate(90)"/>
+                <path id="path-77" class="cls-9" d="M-633.416-614.231C-669.7-615.765-697-622.387-697-630.323s27.3-14.558,63.583-16.093C-631.881-682.7-625.26-710-617.323-710s14.558,27.3,16.094,63.584c36.288,1.535,63.583,8.157,63.583,16.093s-27.295,14.558-63.583,16.093c-1.535,36.288-8.157,63.584-16.094,63.584S-631.881-577.942-633.416-614.231Z" transform="translate(259.413 1004.219) rotate(45)"/>
+                <circle id="ellipse-53" class="cls-10" cx="22" cy="22" r="22" transform="translate(247 100)"/>
+                <g id="group-7">
+                  <path id="ellipse-54" class="cls-7" d="M38.5-17S77,17.237,77,38.5,38.5,99,38.5,99,0,59.763,0,38.5,38.5-17,38.5-17Z" transform="matrix(0.602, -0.799, 0.799, 0.602, 150.586, 246.073)"/>
+                  <path id="ellipse-54-2" data-name="ellipse-54" class="cls-11" d="M38.5-17S77,17.237,77,38.5,38.5,99,38.5,99Z" transform="matrix(0.602, -0.799, 0.799, 0.602, 150.586, 246.073)"/>
+                </g>
+                <g id="group-7-2" data-name="group-7" transform="translate(628.653 132.038) rotate(110)">
+                  <path id="ellipse-54-3" data-name="ellipse-54" class="cls-7" d="M38.5-17S77,17.237,77,38.5,38.5,99,38.5,99,0,59.763,0,38.5,38.5-17,38.5-17Z" transform="matrix(0.602, -0.799, 0.799, 0.602, 150.586, 246.073)"/>
+                  <path id="ellipse-54-4" data-name="ellipse-54" class="cls-11" d="M38.5-17S77,17.237,77,38.5,38.5,99,38.5,99Z" transform="matrix(0.602, -0.799, 0.799, 0.602, 150.586, 246.073)"/>
+                </g>
+              </g>
+            </svg>
+            </div>
+                      <!--EndTimer-->
+
 					</div>
 
-         
+
 
       <!-- FORM -->
       <div class="w3-card-4 w3-margin w3-white w3-padding-small">
@@ -75,73 +183,6 @@ and is wrapped around the whole page content,-->
     </div>
   </div><!-- END CONTENT-->
 
-
-  <script>
-    $(".play").click(function() {
-      $(".stem").addClass("rain");
-
-      setTimeout(function() {
-        $('.stem').removeClass('rain');
-      }, 1200);
-    });
-  </script>
-  <!--END PLANT ANIMATION-->
-
-  <script type="text/javascript">
-    /* Function to display a Countdown timer with starting time from a form */
-    // sets variables for minutes and seconds
-    var ctmnts = 0;
-    var ctsecs = 0;
-    var startchr = 0; // used to control when to read data from form
-
-    function countdownTimer() {
-
-      // https://coursesweb.net/javascript/
-      // if $startchr is 0, and form fields exists, gets data for minutes and seconds, and sets $startchr to 1
-      if (startchr == 0 && document.getElementById('mns') && document.getElementById('scs')) {
-        // makes sure the script uses integer numbers
-        ctmnts = parseInt(document.getElementById('mns').value) + 0;
-        ctsecs = parseInt(document.getElementById('scs').value) * 1;
-
-        // if data not a number, sets the value to 0
-        if (isNaN(ctmnts)) ctmnts = 0;
-        if (isNaN(ctsecs)) ctsecs = 0;
-
-        // rewrite data in form fields to be sure that the fields for minutes and seconds contain integer number
-        document.getElementById('mns').value = ctmnts;
-        document.getElementById('scs').value = ctsecs;
-        startchr = 1;
-        document.getElementById('btnct').setAttribute('disabled', 'disabled'); // disable the button
-      }
-
-      var text = document.getElementById("exampleFormControlTextarea2").value;
-      text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
-      var blob = new Blob([text], {
-        type: "text/plain"
-      });
-      var anchor = document.createElement("a");
-      anchor.download = "entries.txt";
-      anchor.href = window.URL.createObjectURL(blob);
-      anchor.target = "_blank";
-      anchor.style.display = "none"; // just to be safe!
-      document.body.appendChild(anchor);
-      anchor.click();
-      document.body.removeChild(anchor);
-    }
-
-    // When the user clicks on <div>, open the popup
-    function myFunction() {
-      var popup = document.getElementById("myPopup");
-      popup.classList.toggle("show");
-    }
-
-
-    // When the user clicks on <div>, open the popup
-    function myFunction() {
-      var popup = document.getElementById("myPopup");
-      popup.classList.toggle("show");
-    }
-  </script>
 
   <!-- END BODY -->
 </body>
