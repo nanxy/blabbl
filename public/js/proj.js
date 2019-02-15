@@ -1,4 +1,19 @@
-window.onload=function(){
+var header = document.querySelector('#header');
+var footer = document.querySelector('#footer');
+
+var xhr_header = new XMLHttpRequest();
+
+xhr_header.open('GET', 'header.html');
+xhr_header.onload = function() {
+	if (xhr_header.status === 200) {
+		header.innerHTML = xhr_header.responseText
+	} else {
+		console.log(xhr_header.status);
+		console.log(xhr_header.statusText);
+	}
+};
+xhr_header.send();
+
 //back button
 function goBack() {
   window.history.back();
@@ -226,4 +241,23 @@ pauseBtn.addEventListener('click',pauseTimer);
       var popup = document.getElementById("myPopup");
       popup.classList.toggle("show");
     }
-  }
+
+    ////unsaved Function////////////////////////////////////////////////////////
+    var unsaved = false;
+
+$(":input").change(function(){ //triggers change in all input fields including text type
+    unsaved = true;
+});
+
+function unloadPage(){
+    if(unsaved){
+        return "You have unsaved changes on this page. Do you want to leave this page and discard your changes or stay on this page?";
+    }
+}
+
+$('#save').click(function() {
+    unsaved = false;
+});
+
+
+  window.onbeforeunload = unloadPage;
