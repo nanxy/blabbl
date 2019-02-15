@@ -5,14 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="../css/styling.css">
+<link rel="stylesheet" href="css/styling.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<script
-<title>New Entry</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+
+
+<title>Entry Page</title>
 
 <!-- light grey bg for large screens -->
 
@@ -31,88 +34,415 @@ and is wrapped around the whole page content,-->
   </div> -->
 
     <!-- Header -->
-    <header class="w3-panel w3-center w3-opacity w3-padding-small">
+    <header class="w3-panel w3-center w3-padding-16">
       <div class="w3-padding-small">
         <div class="w3-bar w3-border">
+          <button onclick="goBack()" class="w3-bar-item w3-button ">back</button>
+          <!--other nav buttons
+        <a href="#" class="w3-bar-item w3-button w3-light-grey"></a>
+        <a href="#" class="w3-bar-item w3-button"></a>
+      -->
+          <a href="http://localhost:3000/homepage" class="w3-bar-item w3-button ">home</a>
+          <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">?</button>
 
-          <button class="w3-bar-item w3-button" onclick="goBack()">back</button>
-          <a href="http://localhost:3000" class="w3-bar-item w3-button ">home</a>
-        </div>
-      </div>
+          <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+              <div class="w3-container">
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
 
-    </header>
-    <div class="w3-padding" style="margin-top:-30px;">
-      <div class="w3-card-4 w3-margin w3-white">
-        <div class="w3-cell-row">
-          <div class="timer w3-cell-middle w3-margin">
-						<img class="timergraphic" src="middle.png">
-						<div class="w3-bar">
-              <div class="timercontainer">
-                <div class="setters">
-                  <div class="minutes-set">
-                    <button data-setter="minutes-plus">+</button>
-                    <button data-setter="minutes-minus">-</button>
+                <H2 class="w3-center">User Guide</H2>
+
+                <div class=" w3-content w-3center w3-panel">
+                  <div class="w3-col">
+                    <a href="#new" class="btn btn-info w3-card w3-panel w3-hover-pink w3-padding-16 w3-button w3-block w3-left-align" data-toggle="collapse"> How do I <b>make a new entry?</b></a>
+                    <div id="new" class="collapse w3-panel w3-card">
+                      <p>
+                        1. Click on "New Entry" on the home page <br>
+                        2. Select the feeling you would like to tag your entry <br>
+                        3. Select the topic tag that you are thinking <br>
+                        4. The timer will start once you enter text in the text box <br>
+                        5. You can pause the timer with the 'play' and 'pause buttons' <br>
+                        Your entry can be saved manually at any time, and a alert will notify you if you are navigating away without saving
+                      </p>
+                    </div>
+
+                    <a href="#view" class="btn btn-info w3-hover-pink w3-panel w3-padding-16 w3-button w3-block w3-left-align" data-toggle="collapse"> How do I <b>find</b> my past entries?<i class="fa fa-caret-down"></i></a>
+                    <div id="view" class="collapse w3-card w3-panel">
+                      <p>
+                        1. Click on "" on the home page <br>
+                        2. Select the view <br>
+                        3. IDK this is filler until I can see the rest of the website <br>
+                      </p>
+                    </div>
+
+                    <a href="#edit" class="btn btn-info w3-panel w3-hover-pink w3-padding-16 w3-button w3-block w3-left-align" data-toggle="collapse"> How do I <b>edit</b> my past entries?<i class="fa fa-caret-down"></i></a>
+                    <div id="edit" class="collapse w3-card w3-panel">
+                      <p>
+                        1. Click on "" on the home page <br>
+                        2. Select the view <br>
+                        3. Select the post you would like to edit <br>
+                        4. IDK this is filler until I can see the rest of the website<br>
+                      </p>
+                    </div>
+                    <H4></H4>
+                    <a href="#delete" class="btn btn-info w3-panel w3-hover-pink w3-padding-16 w3-button w3-block w3-left-align" data-toggle="collapse"> How do I <b>delete</b> my past entries?<i class="fa fa-caret-down"></i></a>
+                    <div id="delete" class="collapse w3-card w3-panel">
+                      <p>
+                        1. Click on "" on the home page <br>
+                        2. Select the view <br>
+                        3. Select the post you would like to delete <br>
+                        4. IDK this is filler until I can see the rest of the website, hopefully we will have a delete icon.<br>
+                      </p>
+                    </div>
+
                   </div>
-                </div>
-                <div class="circle"> <svg width="100" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-                  <g transform="translate(110,110)">
-                    <circle r="100" class="e-c-base"/>
-                    <g transform="rotate(-90)">
-                      <circle r="100" class="e-c-progress"/>
-                      <g id="e-pointer">
-                        <circle cx="100" cy="0" r="8" class="e-c-pointer"/>
-                      </g>
-                    </g>
-                  </g>
-                  </svg> </div>
-                <div class="controlls">
-                  <div class="display-remain-time">05:00</div>
-                  <button class="play" id="pause"></button>
                 </div>
               </div>
             </div>
-					</div>
+          </div>
+
+        </div>
+      </div>
+
+  </header>
 
 
+    <div class="w3-card-4 w3-margin w3-white">
 
-      <!-- FORM -->
-      <div class="w3-card-4 w3-margin w3-white w3-padding-small">
+      <div class="w3-cell-row">
+        <!-- flower start here-->
+        <div class=" w3-col s3 w3-center">
 
-        <div class="form-group">
-          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" placeholder="Write here, right now..." rows="5"></textarea>
+          <div class="w3-content w3-center icn">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="697 709 512 512">
+              <defs>
+                <style>
+                  .cls-1 {
+                fill: #26424b;
+                stroke: #95989a;
+              }
+
+              .cls-2 {
+                clip-path: url(#clip-path);
+              }
+
+              .cls-3 {
+                fill: #db605a;
+              }
+
+              .cls-4 {
+                fill: #a93b3b;
+              }
+
+              .cls-5 {
+                fill: #b34d49;
+              }
+
+              .cls-6 {
+                fill: #8a3b38;
+              }
+
+              .cls-7 {
+                fill: #78c1b0;
+              }
+
+              .cls-8 {
+                fill: #fff;
+              }
+
+              .cls-9 {
+                fill: #e9e8ea;
+              }
+
+              .cls-10 {
+                fill: #e8b750;
+              }
+
+              .cls-11 {
+                fill: #5e9085;
+              }
+
+              .cls-12 {
+                stroke: none;
+              }
+
+              .cls-13 {
+                fill: none;
+              }
+            </style>
+                <clipPath id="clip-path">
+                  <circle id="ellipse-45" class="cls-1" cx="256" cy="256" r="256" transform="translate(0 -1)" />
+                </clipPath>
+              </defs>
+              <g id="group-mask-10" class="cls-2" transform="translate(697 710)">
+                <g id="icnBg" data-name="ellipse-45" class="cls-1" transform="translate(0 -1)">
+                  <circle class="cls-12" cx="256" cy="256" r="256" />
+                  <circle class="cls-13" cx="256" cy="256" r="255.5" />
+                </g>
+                <rect id="rectangle-27" class="cls-3" width="325" height="240" transform="translate(104 350)" />
+                <path id="path-75" class="cls-4" d="M37,184.92V162H362v22.446C326,201.713,266.415,213,199,213,132.2,213,73.093,201.92,37,184.92Z" transform="translate(67 210)" />
+                <path id="path-47" class="cls-3" d="M-696.975-562.933l-.025.015V-644.77l.064.049C-694.221-680.928-606.194-710-498-710c109.9,0,199,30,199,67,0,.339-.007.674-.022,1.012L-299-642v82.125l-.331-.228C-305.323-524.912-391.979-497-498-497-606.845-497-695.279-526.422-696.975-562.933Z"
+                  transform="translate(764 898)" />
+                <ellipse id="ellipse-49" class="cls-5" cx="162.5" cy="60" rx="162.5" ry="60" transform="translate(104 206)" />
+                <path id="path-57" class="cls-6" d="M-682.879-625.5C-657.5-646.423-600.61-661-534.5-661s123,14.576,148.38,35.5C-411.5-604.577-468.39-590-534.5-590S-657.5-604.577-682.879-625.5Z" transform="translate(801 916)" />
+                <rect id="rectangle-28" class="cls-7" width="30" height="273" transform="translate(254 53)" />
+                <ellipse id="ellipse-52" class="cls-8" cx="97" cy="20" rx="97" ry="20" transform="translate(172 102)" />
+                <ellipse id="ellipse-52-2" data-name="ellipse-52" class="cls-8" cx="97" cy="20" rx="97" ry="20" transform="translate(289 25) rotate(90)" />
+                <path id="path-77" class="cls-9" d="M-633.416-614.231C-669.7-615.765-697-622.387-697-630.323s27.3-14.558,63.583-16.093C-631.881-682.7-625.26-710-617.323-710s14.558,27.3,16.094,63.584c36.288,1.535,63.583,8.157,63.583,16.093s-27.295,14.558-63.583,16.093c-1.535,36.288-8.157,63.584-16.094,63.584S-631.881-577.942-633.416-614.231Z"
+                  transform="translate(259.413 1004.219) rotate(45)" />
+                <circle id="ellipse-53" class="cls-10" cx="22" cy="22" r="22" transform="translate(247 100)" />
+                <g id="group-7">
+                  <path id="ellipse-54" class="cls-7" d="M38.5-17S77,17.237,77,38.5,38.5,99,38.5,99,0,59.763,0,38.5,38.5-17,38.5-17Z" transform="matrix(0.602, -0.799, 0.799, 0.602, 150.586, 246.073)" />
+                  <path id="ellipse-54-2" data-name="ellipse-54" class="cls-11" d="M38.5-17S77,17.237,77,38.5,38.5,99,38.5,99Z" transform="matrix(0.602, -0.799, 0.799, 0.602, 150.586, 246.073)" />
+                </g>
+                <g id="group-7-2" data-name="group-7" transform="translate(628.653 132.038) rotate(110)">
+                  <path id="ellipse-54-3" data-name="ellipse-54" class="cls-7" d="M38.5-17S77,17.237,77,38.5,38.5,99,38.5,99,0,59.763,0,38.5,38.5-17,38.5-17Z" transform="matrix(0.602, -0.799, 0.799, 0.602, 150.586, 246.073)" />
+                  <path id="ellipse-54-4" data-name="ellipse-54" class="cls-11" d="M38.5-17S77,17.237,77,38.5,38.5,99,38.5,99Z" transform="matrix(0.602, -0.799, 0.799, 0.602, 150.586, 246.073)" />
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!--Timer-->
+          <div class="tool">
+            <button class="w3-btn" id="btn1"><i class='far fa-pause-circle'></i></button>
+            <button class="w3-btn" id="btn2"><i class='far fa-play-circle'></i></button>
+            <button class="w3-btn" id="btn4"><i class="fas fa-undo-alt"></i></button>
+          </div>
+
+          <!--EndTimer-->
+
         </div>
 
-      </div><!-- END FORM -->
 
-      <!-- TAG AND SAVE -->
-      <div class="w3-row w3-card-4 w3-padding-small w3-white">
-        <div class="col-xs-10">
-          <span class="w3-tag">Happy</span>
-					<span class="w3-tag">Work</span>
-          <button type="button mx-auto" class="btn btn-default" id="myBtn" onclick="download()">Save</button>
-          <!-- Trigger/Open The Modal -->
 
-          <!-- The Modal -->
-          <div id="myModal" class="modal">
+        <!-- FORM -->
+        <div class="w3-col s9 w3-center w3-white w3-padding-small">
 
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <p>Draft Saved!</p>
+          <div class="form-group">
+            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" placeholder="Write here, right now..." rows="5"></textarea>
+          </div>
+          <!-- TAG AND SAVE -->
+          <div class="w3-row w3-card-4 w3-padding-small w3-white">
+            <div class="col-xs-10">
+              <span id="tag1" class="w3-tag"></span>
+					    <span id="tag2" class="w3-tag"></span>
+               <button type="button mx-auto" class="btn btn-default" id="myBtn">Save</button>
+              <!-- Trigger/Open The Modal -->
+
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Draft Saved!</p>
+                </div>
+
+              </div>
             </div>
-
           </div>
 
         </div>
 
-      </div>
-    </div>
-  </div><!-- END CONTENT-->
 
-  <!-- END BODY -->
+
+    </div><!-- END CONTENT-->
+
+
+    <!-- END BODY -->
 </body>
 
+<script>
+    function goBack() {
+		window.history.back();
+  }
+  
+  function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+    // each <a> element
+    // class="... tag"
+    // prompt2.js
+    document.getElementById("tag1").innerHTML = getParameterByName('tag1');
+    document.getElementById("tag2").innerHTML = getParameterByName('tag2');
+  
+    function download(){
+    var text = document.getElementById("exampleFormControlTextarea2").value;
+    text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
+    var blob = new Blob([text], { type: "text/plain"});
+    var anchor = document.createElement("a");
+    anchor.download = "entries.txt";
+    anchor.href = window.URL.createObjectURL(blob);
+    anchor.target ="_blank";
+    anchor.style.display = "none"; // just to be safe!
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+  }
+  
+  // Get the modal
+  var modal = document.getElementById('myModal');
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  
+  
+  
+  // https://www.august.com.au/blog/svg-animation-with-greensock/
+window.onload=function(){
 
+
+
+const tl = new TimelineMax({onComplete:done, paused:true});
+const elem = document.getElementById('ellipse-53');
+const pauseBtn = document.getElementById('btn1');
+const playBtn = document.getElementById('btn2');
+
+const restartBtn = document.getElementById('btn4');
+
+//elem.style.opacity = 0; moved to Set
+let duration = 1;
+var currentTimeScale = tl.timeScale(.1); //gets current timeScale
+let paused = tl.paused();
+
+
+
+pauseBtn.addEventListener('click', function(e) {
+
+   tl.pause();
+
+});
+
+playBtn.addEventListener('click', function(e) {
+  tl.resume();
+});
+
+restartBtn.addEventListener('click', function(e) {
+  tl.restart();
+});
+
+function done(){
+    console.log("duration is: "+t1.duration() + "seconds!");
+}
+
+
+
+function myFunction() {
+  var x = document.getElementById("fin");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    x.innerhtml="Good Job! You reflected for " + t1.duration() + "seconds!";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+
+
+/* letter "g" animation
+tl.set(elem, {
+  opacity: 0
+})
+.to(elem, duration, {
+  x: 1000,
+  opacity: 1,
+  scale: 2,
+  ease: Elastic.easeOut.config(1, 0.3)
+});
+
+tl.to(elem, duration, {
+  y: 100,
+  scale: 8,
+}, "-=1");
+*/
+
+
+/* flower animation */
+const icnBg = document.getElementById('icnBg');
+const petales_grp1 = document.querySelectorAll('.cls-8');
+const petales_grp2 = document.querySelectorAll('.cls-9');
+const petales_center = document.querySelector('.cls-10');
+
+const plante_tige = document.querySelector('.cls-7');
+const plante_leafRight = document.getElementById('group-7-2');
+const plante_leafLeft = document.getElementById('group-7');
+
+var flower = [petales_grp1, petales_grp2, petales_center];
+var plante = [plante_tige, plante_leafRight, plante_leafLeft];
+
+
+tl.set(petales_grp1, {
+  scale: 0,
+  transformOrign:'0% 0%',
+  //rotation: 0
+})
+
+tl.set(petales_grp2, {
+  scale: 0,
+})
+
+tl.set(petales_center, {
+  scale: 0,
+  transformOrign:'0% 0%'
+})
+
+tl.set(plante_tige, {
+  scale: 0
+})
+
+tl.set(plante_leafRight, {
+  scale: 0
+})
+
+tl.set(plante_leafLeft, {
+  scale: 0
+})
+
+
+tl.staggerTo(plante, 0.8, {
+  scale: 1
+}, 0.5,
+
+  //onComplete:tweenComplete,
+  //onCompleteParams:["{self}"]},
+  //1.2, myCompleteAll
+
+);
+
+tl.staggerTo(flower, 0.8, {
+  scale: 1
+}, 0.5
+  //onComplete:tweenComplete,
+  //onCompleteParams:["{self}"]},
+  //1.2, myCompleteAll
+);
+}
+
+
+</script>
 
 
 </html>

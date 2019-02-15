@@ -11,14 +11,15 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="css/styling.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+      var entry = { tags: [], entryContent:'', date: new Date()};
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
   <title></title>
 </head>
 
 <style>
-
 .w3-cell-row {
     text-align: center;
     margin-bottom: 1%;
@@ -36,7 +37,7 @@
       <div class="w3-padding-small">
         <div class="w3-bar w3-border">
           <button class="w3-bar-item w3-button" onclick="goBack()">back</button>
-          <a href="http://localhost:3000" class="w3-bar-item w3-button ">home</a>
+          <a href="http://localhost:3000/homepage" class="w3-bar-item w3-button ">home</a>
         </div>
       </div>
 
@@ -48,8 +49,8 @@
             <div class="w3-container">
 				<div class="w3-cell-row">
                     <div class="w3-cell-middle">
-						<a href="http://localhost:3000/prompt2"> <button class="w3-btn w3-round-xlarge
-                        w3-border w3-border-blue">
+						<a href="http://localhost:3000/prompt2?tag1=happy"> <button id='happy' class="w3-btn w3-round-xlarge
+                        w3-border w3-border-blue" >
 								<h8>HAPPY</h8>
 							</button></a>
 					</div>
@@ -57,8 +58,8 @@
         
                 <div class="w3-cell-row">
 					<div class=" w3-cell-middle">
-						<a href="http://localhost:3000/prompt2"> <button class="w3-btn w3-round-xlarge
-                         w3-border w3-border-blue">
+						<a href="http://localhost:3000/prompt2?tag1=sad"> <button id='sad' class="w3-btn w3-round-xlarge
+                         w3-border w3-border-blue" >
 								<h8>SAD</h8>
 							</button></a>
 					</div>
@@ -66,8 +67,8 @@
 
                  <div class="w3-cell-row">
 					<div class=" w3-cell-middle">
-						<a href="http://localhost:3000/prompt2"> <button class="w3-btn w3-round-xlarge
-                         w3-border w3-border-blue">
+						<a href="http://localhost:3000/prompt2?tag1=grateful"><button id='grateful' class="w3-btn w3-round-xlarge
+                         w3-border w3-border-blue" >
 								<h8>GRATEFUL</h8>
 							</button></a>
 					</div>
@@ -75,8 +76,8 @@
 
                  <div class="w3-cell-row">
 					<div class=" w3-cell-middle">
-						<a href="http://localhost:3000/prompt2"> <button class="w3-btn w3-round-xlarge
-                         w3-border w3-border-blue">
+						<a href="http://localhost:3000/prompt2?tag1=content"> <button id='content' class="w3-btn w3-round-xlarge
+                         w3-border w3-border-blue" onclick='createNewEntry(this.id)'>
 								<h8>CONTENT</h8>
 							</button></a>
 					</div>
@@ -84,8 +85,8 @@
 
                  <div class="w3-cell-row">
 					<div class=" w3-cell-middle">
-						<a href="http://localhost:3000/prompt2"> <button class="w3-btn w3-round-xlarge
-                         w3-border w3-border-blue">
+						<a href="http://localhost:3000/prompt2?tag1=anxious"> <button id='anxious' class="w3-btn w3-round-xlarge
+                         w3-border w3-border-blue" >
 								<h8>ANXIOUS</h8>
 							</button></a>
 					</div>
@@ -93,20 +94,12 @@
 
                  <div class="w3-cell-row">
 					<div class=" w3-cell-middle">
-						<a href="http://localhost:3000/prompt2"> <button class="w3-btn w3-round-xlarge
-                         w3-border w3-border-blue">
+						<a href="http://localhost:3000/prompt2?tag1=+"> <button class="w3-btn w3-round-xlarge
+                         w3-border w3-border-blue" >
 								<h8> + </h8>
 							</button></a>
 					</div>
 				</div>
-                
-        <footer class="w3-panel w3-right w3-opacity w3-padding-16">
-            <div class="w3-padding-small">
-                <div class="w3-bar w3-border">
-                    <a href="http://localhost:3000/prompt2" class="w3-bar-item w3-button">next</a>
-                </div>
-             </div>
-        </footer>
 
 
     <!-- END CONTENT -->
@@ -114,8 +107,9 @@
   </div><!-- END CONTAINER -->
 </body><!-- END BODY -->
 <script>
+    var entry = { tags: [], entryContent:'', date: new Date()};
 		function goBack() {
 		window.history.back();
-}
+        }   
 </script>
 </html>

@@ -34,6 +34,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
+app.get('/homepage', index.homepage);
 app.get('/pastentries', index.postentry);
 app.get('/profile', index.profile);
 app.get('/newentry',index.newentry);
@@ -42,6 +43,7 @@ app.get('/tagentries',index.tagentries);
 app.get('/entrycontent',index.viewentry);
 app.get('/prompt1',index.prompt1);
 app.get('/prompt2',index.prompt2);
+
 
 
 http.createServer(app).listen(app.get('port'), function(){
