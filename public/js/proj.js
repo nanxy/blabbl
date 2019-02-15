@@ -1,3 +1,4 @@
+window.onload=function(){
 //back button
 function goBack() {
   window.history.back();
@@ -13,7 +14,7 @@ if (event.target == modal) {
 modal.style.display = "none";
 }
 }
-<script>
+
   function goBack() {
 		window.history.back();
 }
@@ -42,9 +43,7 @@ modal.style.display = "none";
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
 
-  // When the user clicks the button, open the modal
-  btn.onclick = function() {
-    modal.style.display = "block";
+  // When the user clicks the button, open the modal btn.onclick = function() {    modal.style.display = "block";
   }
 
   // When the user clicks on <span> (x), close the modal
@@ -74,7 +73,7 @@ function update(value, timePercent) {
 };
 //circle ends
 const displayOutput = document.querySelector('.display-remain-time')
-const pauseBtn = document.getElementById('pause');
+//const pauseBtn = document.getElementById('pause');
 const setterBtns = document.querySelectorAll('button[data-setter]');
 let intervalTimer;
 let timeLeft;
@@ -227,3 +226,4 @@ pauseBtn.addEventListener('click',pauseTimer);
       var popup = document.getElementById("myPopup");
       popup.classList.toggle("show");
     }
+  }

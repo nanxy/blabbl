@@ -1,63 +1,51 @@
-window.onload = function(){
+// https://www.august.com.au/blog/svg-animation-with-greensock/
+window.onload=function(){
 
-  var second = 1;
-  var minute = 5;
 
-  setInterval(function(){
-    document.getElementById("timer").innerHTML = minute + ":" + second;
 
-    second--;
-
-    if(second == 0){
-      minute--;
-      second = 60;
-    }
-    if(minute == 0 && second == 1){
-      document.getElementById("timer").innerHTML = "Timer Stopped";
-    }
-    if(minute <= -1) {
-      document.getElementById("timer").innerHTML = " ";
-    }
-  }, 1000);
-}
-
-/* timerbuttons*/
-const tl = new TimelineMax();
+const tl = new TimelineMax({onComplete:done, paused:true});
 const elem = document.getElementById('ellipse-53');
-const pauseBtn = document.getElementById('btn');
+const pauseBtn = document.getElementById('btn1');
 const playBtn = document.getElementById('btn2');
-const slowBtn = document.getElementById('btn3');
+
 const restartBtn = document.getElementById('btn4');
-const reverseBtn = document.getElementById('btn5');
+
 //elem.style.opacity = 0; moved to Set
-let duration = .01;
-var currentTimeScale = tl.timeScale(); //gets current timeScale
-
-
+let duration = 1;
+var currentTimeScale = tl.timeScale(.1); //gets current timeScale
 let paused = tl.paused();
 
+
+
 pauseBtn.addEventListener('click', function(e) {
-  if(!paused) {
+
    tl.pause();
-  }
+
 });
 
 playBtn.addEventListener('click', function(e) {
-  tl.play();
-});
-
-slowBtn.addEventListener('click', function(e) {
-  tl.timeScale(0.05);
+  tl.resume();
 });
 
 restartBtn.addEventListener('click', function(e) {
   tl.restart();
 });
 
-reverseBtn.addEventListener('click', function(e) {
-  tl.reverse();
-});
+function done(){
+    console.log("duration is: "+t1.duration() + "seconds!");
+}
 
+
+
+function myFunction() {
+  var x = document.getElementById("fin");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    x.innerhtml="Good Job! You reflected for " + t1.duration() + "seconds!";
+  } else {
+    x.style.display = "none";
+  }
+}
 
 
 
@@ -139,3 +127,4 @@ tl.staggerTo(flower, 0.8, {
   //onCompleteParams:["{self}"]},
   //1.2, myCompleteAll
 );
+}
