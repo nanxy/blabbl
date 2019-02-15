@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--Prompt 1 Page-->
+<!--Prompt 2 Page-->
 <html lang="en" dir="ltr">
 
 <head>
@@ -18,12 +18,10 @@
 </head>
 
 <style>
-
 .w3-cell-row {
     text-align: center;
     margin-bottom: 1%;
 }
-
 </style>
 
 <body class="w3-light-grey w3-padding-16">
@@ -37,7 +35,7 @@
       <div class="w3-padding-small">
         <div class="w3-bar w3-border">
           <button class="w3-bar-item w3-button" onclick="goBack()">back</button>
-          <a href="http://localhost:3000" class="w3-bar-item w3-button ">home</a>
+          <a href="http://localhost:3000/homepage" class="w3-bar-item w3-button ">home</a>
         </div>
       </div>
 
@@ -49,8 +47,8 @@
             <div class="w3-container">
 				<div class="w3-cell-row">
                     <div class="w3-cell-middle">
-						<a href="http://localhost:3000/newentry"> <button class="w3-btn w3-round-xlarge
-                        w3-border w3-border-blue">
+						<a href="http://localhost:3000/newentry?tag2=school" class="tag"> <button id='school' class="w3-btn w3-round-xlarge
+                        w3-border w3-border-blue" >
 								<h8>SCHOOL</h8>
 							</button></a>
 					</div>
@@ -58,8 +56,8 @@
         
                 <div class="w3-cell-row">
 					<div class=" w3-cell-middle">
-						<a href="http://localhost:3000/newentry"> <button class="w3-btn w3-round-xlarge
-                         w3-border w3-border-blue">
+						<a href="http://localhost:3000/newentry?tag2=work" class="tag"> <button id='work' class="w3-btn w3-round-xlarge
+                         w3-border w3-border-blue tag">
 								<h8>WORK</h8>
 							</button></a>
 					</div>
@@ -67,8 +65,8 @@
 
                  <div class="w3-cell-row">
 					<div class=" w3-cell-middle">
-						<a href="http://localhost:3000/newentry"> <button class="w3-btn w3-round-xlarge
-                         w3-border w3-border-blue">
+						<a href="http://localhost:3000/newentry?tag2=family" class="tag"> <button id='family' class="w3-btn w3-round-xlarge
+                         w3-border w3-border-blue tag" >
 								<h8>FAMILY</h8>
 							</button></a>
 					</div>
@@ -76,8 +74,8 @@
 
                  <div class="w3-cell-row">
 					<div class=" w3-cell-middle">
-						<a href="http://localhost:3000/newentry"> <button class="w3-btn w3-round-xlarge
-                         w3-border w3-border-blue">
+						<a href="http://localhost:3000/newentry?tag2=travel" class="tag"><button id='travel' class="w3-btn w3-round-xlarge
+                         w3-border w3-border-blue tag" >
 								<h8>TRAVEL</h8>
 							</button></a>
 					</div>
@@ -85,8 +83,8 @@
 
                  <div class="w3-cell-row">
 					<div class=" w3-cell-middle">
-						<a href="http://localhost:3000/newentry"> <button class="w3-btn w3-round-xlarge
-                         w3-border w3-border-blue">
+						<a href="http://localhost:3000/newentry?tag2=friends" class="tag"><button id='friends' class="w3-btn w3-round-xlarge
+                         w3-border w3-border-blue tag" >
 								<h8>FRIENDS</h8>
 							</button></a>
 					</div>
@@ -94,23 +92,13 @@
 
                  <div class="w3-cell-row">
 					<div class=" w3-cell-middle">
-						<a href="http://localhost:3000/newentry"> <button class="w3-btn w3-round-xlarge
-                         w3-border w3-border-blue">
+						<a href="http://localhost:3000/newentry?tag2=+" class="tag"> <button class="w3-btn w3-round-xlarge
+                         w3-border w3-border-blue tag">
 								<h8> + </h8>
 							</button></a>
 					</div>
 				</div>
             </div>
-
-        <footer class="w3-panel w3-right w3-opacity w3-padding-16 w3-margin-bottom">
-            <div class="w3-padding-small">
-                <div class="w3-bar w3-border">
-                    <a href="http://localhost:3000/prompt2" class="w3-bar-item w3-button">next</a>
-                </div>
-             </div>
-        </footer>
-           
-
 
     <!-- END CONTENT -->
 
@@ -118,7 +106,26 @@
 </body><!-- END BODY -->
 <script>
 		function goBack() {
-		window.history.back();
+		window.history.back();  
 }
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+    // each <a> element
+   // class="... tag"
+    // prompt2.js
+    var tag1 = getParameterByName('tag1')
+    var tags = document.querySelectorAll('.tag')
+    
+    for(var i = 0; i < tags.length; i++) {
+        tags[i].setAttribute('href', tags[i].getAttribute('href') + '&tag1=' + tag1)
+    }
+    console.log(tags)
 </script>
 </html>

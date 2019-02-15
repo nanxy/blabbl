@@ -7,6 +7,10 @@ exports.view = function(req, res){
   res.render('index');
 };
 
+exports.homepage = function(req, res){
+  res.render('HomePage');
+};
+
 var entry = require('../entry.json');
 
 exports.postentry = function(req, res){
