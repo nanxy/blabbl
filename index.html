@@ -63,7 +63,7 @@ and is wrapped around the whole page content,-->
 
 
         <div class="container">
-          <form action="/homepage">
+          <form action="/ProfilePage">
             <div class="row">
               <h3 class="w3-content w3-center">Login with Social Media or Manually</h3>
             <!--  <div class="vl w3-center" style="vertical-align: align:center">
@@ -74,6 +74,10 @@ and is wrapped around the whole page content,-->
                 <a href="#" class="fb btn">
                   <i class="fa fa-facebook fa-fw"></i> Facebook
                 </a>
+                <fb:login-button
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
                 <a href="#" class="twitter btn">
                   <i class="fa fa-twitter fa-fw"></i> Twitter
                 </a>
